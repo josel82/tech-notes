@@ -1,0 +1,202 @@
+# Miscellaneous
+#Linux #Miscellaneous
+
+## Get the weather forecast on your terminal
+
+```bash
+curl wttr.in
+```
+
+![weather-report.png](../Images/weather-report.png)
+
+You can even create an alias for this:
+```bash
+alias wtr='curl wttr.in'
+```
+
+
+## Speed Test tool
+
+```bash
+curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -
+```
+You will be using python or python3 depending on your distribution. E.g.:
+
+```
+Retrieving speedtest.net configuration...
+Testing from Eir Broadband (86.40.64.84)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Blacknight (Dublin) [1.29 km]: 12.014 ms
+Testing download speed................................................................................
+Download: 93.59 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 18.25 Mbit/s
+```
+
+Create an alias for this: 
+```bash
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -'
+```
+
+
+## Cool prompt
+
+you can customise your prompt as follows:
+1. create a config file named `.bash_prompt` an in there type the following:
+```bash
+BRACKET_COLOR="\[\033[38;5;35m\]"
+CLOCK_COLOR="\[\033[38;5;35m\]"
+JOB_COLOR="\[\033[38;5;33m\]"
+PATH_COLOR="\[\033[38;5;33m\]"
+LINE_BOTTOM="\342\224\200"
+LINE_BOTTOM_CORNER="\342\224\224"
+LINE_COLOR="\[\033[38;5;248m\]"
+LINE_STRAIGHT="\342\224\200"
+LINE_UPPER_CORNER="\342\224\214"
+END_CHARACTER="|"
+		  
+tty -s && export PS1="$LINE_COLOR$LINE_UPPER_CORNER$LINE_STRAIGHT$LINE_STRAIGHT$BRACKET_COLOR[$CLOCK_COLOR\t$BRACKET_COLOR]$LINE_COLOR$LINE_STRAIGHT$BRACKET_COLOR[$JOB_COLOR\j$BRACKET_COLOR]$LINE_COLOR$LINE_STRAIGHT$BRACKET_COLOR[\H:\]$PATH_COLOR\w$BRACKET_COLOR]\n$LINE_COLOR$LINE_BOTTOM_CORNER$LINE_STRAIGHT$LINE_BOTTOM$END_CHARACTER\[$(tput sgr0)\] "
+```
+
+
+2. Then open your `.bashrc`  and add 'source ~/.bash_prompt' at the end of the file:
+```bash
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# my aliases
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -'
+
+alias wtr='curl wttr.in'
+
+#My configs
+source ~/.bash_prompt
+
+```
+
+Now when you log back in, your prompt should look like this:
+``` bash
+┌──[12:51:20]─[0]─[ubuntu-server:~]
+└──|
+```
+
+
+## System sumary
+
+You can configure your terminal so it shows you a system sumary every time you open a new terminal session:
+
+1. install `neofetch` in your system:
+```bash
+sudo apt install neofetch
+```
+
+2. Next, open your `.bashrc` and add 'neofetch' at the end of the file:
+```bash
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# my aliases
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -'
+
+alias wtr='curl wttr.in'
+
+#My configs
+source ~/.bash_prompt
+
+neofetch
+```
+
+Next time you open a session your terminal should look like this:
+![system-sumary.png](../Images/system-sumary.png)
+
+
+## Cheat.sh 
+
+The man pages are a good resource for learning how to use commands, but can some times be a bit overwhelming. `cheat.sh` is a tool that helps you with this. Just run `curl https://cheat.sh` followed by the command you want to get information of:
+
+```bash
+curl https://cheat.sh/rsync
+```
+
+```
+ cheat:rsync 
+# To copy files from remote to local, maintaining file properties and sym-links_
+# (-a), zipping for faster transfer (-z), verbose (-v):_
+rsync -avz host:file1 :file1 /dest/
+rsync -avz /source host:/dest
+  
+# To copy files using checksum (-c) rather than time to detect if the file has_
+# changed. (Useful for validating backups):_
+rsync -avc <src> <dest>
+  
+# To copy /src/foo folder into destination:_
+# This command will create /dest/foo if it does not already exist_
+rsync -auv /src/foo /dest
+  
+# To copy contents of /src/foo into destination:_
+# This command will not create /foo_bak/foo folder_
+rsync -auv /src/foo/ /foo_bak
+  
+# To copy file from local to remote over ssh with non standard port 1234 to_
+# destination folder in remoteuser's home directory:_
+rsync -avz -e "ssh -p1234" <source> <username>@<host>:<dest>
+  
+# Use the specified authentication key, instead of typing a password:_
+# (The key can be generated by ssh-keygen, and the public key should be placed_
+# in remote's authorized_keys, e.g. using ssh-copy-id)_
+rsync -avz -e "ssh -i ~/.ssh/id_rsa" <src> <dest>
+  
+# Log into remote as a user, but promote to root, to access privileged files:_
+rsync -avz --rsync-path="sudo rsync" user@<src> <dest>
+  
+# Rsync only symlinks and preserve them as symlinks (dont follow them):_
+find /path/to/files -type l -print | \
+  rsync -av --files-from=- /path/to/files user@targethost:/dest_path
+  
+ tldr:rsync 
+# rsync_
+# Transfer files either to or from a remote host (not between two remote hosts)._
+# Can transfer single files, or multiple files matching a pattern._
+# More information: <https://manned.org/rsync>._
+  
+# Transfer file from local to remote host:_
+rsync path/to/local_file remote_host:path/to/remote_directory
+  
+# Transfer file from remote host to local:_
+rsync remote_host:path/to/remote_file path/to/local_directory
+  
+# Transfer file in [a]rchive (to preserve attributes) and compressed ([z]ipped) mode with [v]erbose and [h]uman-readable [P]rogress:_
+rsync -azvhP path/to/local_file remote_host:path/to/remote_directory
+  
+# Transfer a directory and all its children from a remote to local:_
+rsync -r remote_host:path/to/remote_directory path/to/local_directory
+  
+# Transfer directory contents (but not the directory itself) from a remote to local:_
+rsync -r remote_host:path/to/remote_directory/ path/to/local_directory
+  
+# Transfer a directory [r]ecursively, in [a]rchive to preserve attributes, resolving contained soft[l]inks , and ignoring already transferred files [u]nless newer:_
+rsync -rauL remote_host:path/to/remote_directory path/to/local_directory
+  
+# Transfer file over SSH and delete remote files that do not exist locally:_
+rsync -e ssh --delete remote_host:path/to/remote_file path/to/local_file
+  
+# Transfer file over SSH using a different port than the default and show global progress:_
+rsync -e 'ssh -p port' --info=progress2 remote_host:path/to/remote_file path/to/local_file
+```
