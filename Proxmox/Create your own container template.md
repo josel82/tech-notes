@@ -54,7 +54,7 @@ Once the Template has been created you can now clone this container.
 ## Configure Clones
 login into the container. Delete the SSH Host keys once again. Regenerate the keys
 ```bash
-sudo rm /etc/sshshh_host_*
+sudo rm /etc/shh_host_*
 ```
 
 ```bash

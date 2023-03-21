@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Linux/Network Settings in Ubuntu Server.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Linux/Network Settings in Ubuntu Server.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Linux/Network Settings in Ubuntu Server.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Linux/Network Settings in Ubuntu Server.md"
               }
             }
           }
@@ -148,6 +148,9 @@
   },
   "active": "75c9d9e186d85737",
   "lastOpenFiles": [
-    "Linux/Network Settings in Ubuntu Server.md"
+    "Proxmox/Network interfaces.md",
+    "Linux/Network Settings in Ubuntu Server.md",
+    "Proxmox/Create your own container template.md",
+    "README.md"
   ]
 }
