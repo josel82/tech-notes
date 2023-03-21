@@ -51,12 +51,48 @@ nameserver 8.8.4.4
 ip addr flush eth0
 ```
 
+
+## Configuring Static IP Address
+1. Search for existing Netplan config file
+```bash
+ls -l /etc/netplan
+```
+
+2. Open Netplan's config file with your text editor of choice. This file might be named differently on your server.
+```bash
+sudo nano /etc/netplan/config.yaml
+```
+
+3. Edit the file accordingly
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    en0:
+      dhcp4: no
+      addresses:
+        - 192.168.0.25/24
+      gateway4: 192.168.0.1
+      nameservers:
+          addresses: [8.8.8.8, 1.1.1.1]
+```
+Save and close the file.
+
+Apply the configuration:
+```bash
+sudo netplan apply
+```
+
+
 ## Dynamic IP address assignment (DHCP Client)
-Open Netplan's config file. This file might be name differently on your server.
+
+1. Open Netplan's config file. This file might be named differently on your server.
 ```
 sudo nano /etc/netplan/config.yaml
 ```
-Edit the file as follows:
+
+2. Edit the file as follows:
 ```yaml
 network:
    version: 2
@@ -65,11 +101,12 @@ network:
      enp3s0:
         dhcp4: true
 ```
-Save and exit the file.
+Save and close the file.
 
-Apply the configuration:
+3. Apply the configuration:
 ```bash
 sudo netplan apply
 ```
+
 
 
