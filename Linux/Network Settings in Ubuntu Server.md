@@ -5,7 +5,7 @@
 
 ## Identify interface
 ```bash
-ip a
+ip addr
 ```
 
 or
@@ -38,6 +38,15 @@ sudo ip route add default via 10.1.1.1
 ```bash
 ip route show
 ```
+or
+```bash
+route -n
+```
+
+## Get DNS servers information
+```bash
+systemd-resolve --status
+```
 
 ## Set DNS servers
 `/etc/resolv.conf`
@@ -53,37 +62,58 @@ ip addr flush eth0
 
 
 ## Configuring Static IP Address
+
+^035879
+
 1. Search for existing Netplan config file
 ```bash
 ls -l /etc/netplan
 ```
 
-2. Open Netplan's config file with your text editor of choice. This file might be named differently on your server.
+2. This file might be named differently on your server. Before editing the config file we are going to create a backup file we can revert to in case there is an issue.
+```bash
+sudo cp /etc/netplan/config.yaml /etc/netplan/config.yam.bkp
+```
+
+3. Open Netplan's config file with your text editor of choice. 
 ```bash
 sudo nano /etc/netplan/config.yaml
 ```
 
-3. Edit the file accordingly
+4. Edit the file as follows
 ```yaml
 network:
   version: 2
-  renderer: networkd
   ethernets:
     en0:
-      dhcp4: no
-      addresses:
-        - 192.168.0.25/24
-      gateway4: 192.168.0.1
-      nameservers:
-          addresses: [8.8.8.8, 1.1.1.1]
+	    addresses: [192.168.0.25/24]
+	    nameservers:
+	        addresses: [8.8.8.8, 1.1.1.1]
+		routes:
+			- to: default
+			  via: 192.168.0.1
 ```
 Save and close the file.
 
-Apply the configuration:
+5. Test the configuration
+```bash
+sudo netplan try
+```
+
+6. Apply the configuration:
 ```bash
 sudo netplan apply
 ```
 
+## Release DHCP lease
+```bash
+sudo dhclient -v -r
+```
+
+## Obtain an IP address via DHCP
+```bash
+sudo dhclient -v
+```
 
 ## Dynamic IP address assignment (DHCP Client)
 

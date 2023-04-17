@@ -45,3 +45,62 @@ netstat -ano | find <ip_address>
 ```msdos
 Taskill /F /PID <PID>
 ```
+
+
+## TightVNC 
+
+[Source](https://www.youtube.com/watch?v=3K1hUwxxYek&t=77s)
+
+```bash
+sudo apt update 
+```
+
+```bash
+sudo apt install lightdm 
+```
+
+```bash
+sudo reboot 
+```
+
+```bash
+sudo apt install x11vnc
+```
+
+Create the following config file:
+```bash
+sudo nano /lib/systemd/system/x11vnc.service
+```
+
+Paste the following lines inside of the file above:
+```
+[Unit] 
+Description=x11vnc service 
+After=display-manager.service network.target syslog.target 
+
+[Service] 
+Type=simple 
+ExecStart=/usr/bin/x11vnc -forever -display :0 -auth guess -passwd password ExecStop=/usr/bin/killall x11vnc 
+Restart=on-failure 
+
+[Install] 
+WantedBy=multi-user.target
+```
+
+Save the file and run the following commands:
+
+```bash
+sudo systemctl daemon-reload 
+```
+
+```bash
+sudo systemctl enable x11vnc.service 
+```
+
+```bash
+sudo systemctl start x11vnc.service 
+```
+
+```bash
+sudo systemctl status x11vnc.service
+```

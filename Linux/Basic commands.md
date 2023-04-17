@@ -31,17 +31,7 @@ htop
 ```
 `htop` has a nice interface, but it may require to be installed. 
 
-### Netstat command
-This command lists all open ports in a server
-```bash
-netstat -tupln
-```
-`flags:   t=show tcp connections | u=show udp connections  | p= program that is attached to | l=show listening ports only | n=show addresses in numeric form``
 
-It is best to run this command with root permissions: 
-```bash
-sudo netstat -tupln
-```
 
 ### Man command
 This command will open the man pages of any other command:
@@ -71,16 +61,6 @@ lsof -i :[port]
 Kill -9 <PID>
 ```
 
-### Discover other hosts in the same network
-```bash
-netdiscover -v <IP_address_of_router_in_CIDR_format>
-```
-It shows all IP addresses of devices connected to the same network
-
-E.g. 
-```bash
-netdiscover -v 192.168.64.1/24
-```
 
 ### Server shutdown
 ```bash
@@ -133,3 +113,6 @@ lspci
 ```bash
 lsusb
 ```
+
+
+
