@@ -1,0 +1,2 @@
+- `show ipv6 int f0/0`
+- `debug ipv6 icmp`

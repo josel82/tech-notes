@@ -44,7 +44,7 @@ E.g.
 mv hello /usr/local/bin/
 ```
 
-2. or I could add a new directoy to the `$PATH` variable. E.g.
+2. or I could add a new directory to the `$PATH` variable. E.g.
 ```bash
 mkdir ~/bin
 mv hello bin/
@@ -52,7 +52,7 @@ PATH=$PATH:~/bin
 ```
 
 ## IMPORTANT!
-Adding a path to the `$PATH` variable will only last for the duration of the current session. Whenever you open a new session the `$PATH` variable will defaul back to its original value.
+Adding a path to the `$PATH` variable will only last for the duration of the current session. Whenever you open a new session the `$PATH` variable will default back to its original value.
 If you want this change to stick you will need to add the following script to your `.bashrc` file:
 
 ```bash
@@ -69,7 +69,7 @@ fi
 
 # End of the file
 
-if [ -d ~/bin ] #here we check if the ~/bin directory exists
+if [ -d ~/bin ]; #here we check if the ~/bin directory exists
 then
 	PATH=$PATH:~/bin
 fi

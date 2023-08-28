@@ -138,5 +138,5 @@ Save and close the file.
 sudo netplan apply
 ```
 
-
-
+## How to disable IPv6
+https://linuxconfig.org/how-to-disable-ipv6-address-on-ubuntu-22-04-lts-jammy-jellyfish

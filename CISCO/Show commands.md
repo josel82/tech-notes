@@ -1,0 +1,38 @@
+
+- `show version`
+- `show arp`
+- `show run | include boot`  similar to grep comman in linux, this will only show lines that contains the word after the include command
+- `show run | begin enable` here the output will everything from the line that matches the wordm, whin in this examples hapens to be "enable"
+- `show run | section line`  prints only the a section of the running config
+- `show run int g0/0` running config of a specific interface
+- `show flash` displays the contents of the default file system
+- `show file systems`  [[File system#^c0e03a]]
+- `show running-config` displays the running config found in `system:`
+- `show startup-config` displays the startup config found in `nvram:`
+- `show control-plane host open-ports`
+- `show cdp neighbours`
+	- `show cdp neighbours details`
+	- `Router(config-if)#no cdp enable` to disable cdp on an interface. Yo want to disable cdp on interfaces that are facing outside you network for security reasons. 
+	- `Router(config)no cdp run`
+- `show users` lists active lines
+	- `clear line <Line number>` closes a specified session
+- `show lines` lists all available lines on the device
+- `show sessions` lists all active sessions
+	- `disconnect` disconect the last active session
+	- `<session number>` takes you to a specified session e.g. `Router#1` will take you to session number 1
+- `show ip ssh` to check whether SSH is enabled
+- `show ssh` lists all ssh sessions
+- `show access-lists`
+- `show access-list <number>`
+
+#### Switches
+- `sh interface g0/0 switchport`
+- `sh int trunk`
+- `sh int status`
+- `sh vtp status`
+- `sh dtp interface g0/0` 
+- `sh mac address-table`
+- ##### Port security ^8c754e
+	- `show port-security`
+	- `show port-security address`
+	- `show port-security interface f1/0/1`
