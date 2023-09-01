@@ -18,14 +18,14 @@ Source:
 4. Under 'Disks', delete the default disk. We will be importing a disk image.
 ![create-vm-04.png](Images/create-vm-04.png)
 
-5. Keep the default value of 1 core. You will be able to add more cores to each indiviadual clone if required.
+5. Keep the default value of 1 core. You will be able to add more cores to each individual clone if required.
 ![create-vm-05.png](Images/create-vm-05.png)
 
 6. Give this template 1024MB of RAM. You can increase the memory on each individual clone if required.
 ![create-vm-06.png](Images/create-vm-06.png)
 
-7. Select the bridge interface that corresponds to the right VLAN. 
-![create-vm-01.png](Images/create-vm-07.png)
+7. Select the right Bridge and VLAN tag  
+![create-vm-01.png](Images/create-vm-12.png)
 
 8. Check that all the setting are correct and click on 'Finish'.
 ![create-vm-02.png](Images/create-vm-08.png)
@@ -44,7 +44,7 @@ Here you can add a SSH Public Key if you have generated one. You can also set th
 ## Import Cloud-Init image
 In this example, I am going to be using Ubuntu 20.04 focal as the OS version of my Cloud-Init image.
 
-1. Open this [link](https://cloud-images.ubuntu.com/minimal/releases/focal/release) on a web browser and copy the link of the image. (Look for a .img file)
+1. Open this [link](https://cloud-images.ubuntu.com/minimal/releases/focal/release) on a web browser and copy the link of the image. Copy the Link address of the cloud-init image. It is the file with the `.img` file extension.
 
 ![cloud-init-04](Images/cloud-init-04.png)
 

@@ -51,7 +51,10 @@ e.g:
 ```bash
 qm set --onboot 0 100
 ```
-
+connect to a VMs console
+```bash
+qm terminal <VM ID>
+```
 
 ## Containers
 
