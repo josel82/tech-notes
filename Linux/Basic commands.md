@@ -104,6 +104,10 @@ lshw
 hwinfo
 ```
 
+### List Hard Drives
+```bash
+lsblk
+```
 ### List PCI
 ```bash
 lspci
