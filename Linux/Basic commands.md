@@ -21,6 +21,11 @@ w
 command -v sshfs
 ```
 
+### Check if a particular user exists
+```bash
+passwd <username>
+```
+
 ### List processes
 ```bash
 top
@@ -89,33 +94,59 @@ sudo reboot now
 route -n
 ```
 
-### List CPU Information
+## Listing Hardware
+### CPU Information
 ```bash
 lscpu
 ```
 
-### List Hardware
+###  Hardware
 ```bash
 lshw
 ```
 
-### Hardware info
+You may want to run this command with `sudo` in order to see all the information.
 ```bash
-hwinfo
+sudo lshw
 ```
 
-### List Hard Drives
+with the `-html` option this command will give you the output in html format. You can then save that into a file you can then open in a web browser.
+```bash
+sudo lshw -html > hwinfo.html 
+```
+
+A shorter output version of the same command.
+```bash
+sudo lhhw -short
+```
+
+### USB devices
+```bash
+lsusb
+```
+
+Here we use the watch command, which will basically run the `lsusb` every two seconds. The `-d` option is for highlighting the differences in the output, which is particularly useful if you are trying to identify a device as you are plugging it in and out.
+```bash
+watch -d lsusb
+```
+
+Tree view
+```bash
+lsusb -t
+```
+### Storage
 ```bash
 lsblk
 ```
-### List PCI
+
+You can run this command with `watch` in order to easily identify a usb external storage device
 ```bash
-lspci
+watch lsblk
 ```
 
-### List USB devices
+### PCI bus
 ```bash
-lsusb
+lspci
 ```
 
 
