@@ -105,6 +105,11 @@ lscpu
 lshw
 ```
 
+In case the command is not available. For Debian based distros:
+```bash
+sudo apt install lshw
+```
+
 You may want to run this command with `sudo` in order to see all the information.
 ```bash
 sudo lshw
