@@ -7,7 +7,7 @@ For purpose of this documentation we will assume we have two disks `vm-disk-0.qc
 
 Create a new VM with ID: 110 (This ID is just a aleatory number used for this example, you could select any other available number). On the "OS" section select "Do not use any media" option. You can continue with the default options.
 
-## Proceadure 1
+## Procedure 1
 
 ^919a14
 
@@ -15,20 +15,20 @@ Once the VM has been created, you can delete the virtual disk that was created b
 
 Log into the node's shell; Then run the following commands to import the two disks:
 ```bash
-qm importdisk 110 /home/myUser/images/vm-disk-0.qcow2 VM-Drives --format qcow2
+qm importdisk <vmid> vm-vmid-disk-0.qcow2 VM-Drives --format qcow2
 ```
 
 ```bash
-qm importdisk 110 /home/myUser/images/vm-disk-1.qcow2 VM-Drives --format qcow2
+qm importdisk <vmid> vm-vmid-disk-1.qcow2 VM-Drives --format qcow2
 ```
 
 In this example "VM-Drives" is the name of the directory for Disk Images 
 
 These two disks will show in VM 110 as unused disks. You will then need to attach them to the VM.
 
-Once this has been done, on the VM menu got to Options > Boot Order and change it to boot from the appropiate disk.
+Once this has been done, on the VM menu got to Options > Boot Order and change it to boot from the appropriate disk.
 
-## Proceadure 2
+## Procedure 2
 After the VM has been created, add another virtual disk with the default values. Then, detach both disks. 
 
 Log into the node's shell. List the names of these newly created disks.
