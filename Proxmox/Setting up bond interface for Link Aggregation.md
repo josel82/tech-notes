@@ -1,9 +1,19 @@
-# How to create NIC bond for Link Aggregation
+# Setting up bond interface for Link Aggregation
 #Proxmox #Virtualization #Networking 
 
-1. Aggregate ports on your switch
-2. Open a terminal session on your PVE node
-3. Then, open and edit `/etc/network/interfaces`
+## GUI method (Recommended)
+1. Select the node, and under System > Network, click on "Create", then select "Linux Bond".
+2. In the next window, configure the bond interface as follows:
+![Step2](Images/img01.png) 
+	2.1. Give the bond interface a name, in this case I have named it `bond1`. 
+	2.2 Under "Slaves", write the name of the interfaces you are bonding, separated by a space. 
+	2.3 LACP (802.3ad) mode will allow for multi VLAN traffic (LAG).
+
+
+## Manual method
+
+1. Open a terminal session on your PVE node
+2. Then, open and edit `/etc/network/interfaces`
 ```bash
 nano /etc/network/interfaces
 ```
@@ -24,7 +34,7 @@ iface bond0 inet manual
 		bond-xmit-hash-policy layer3+4
 ```
 
-Now add a new bridge config
+3. Now add a new bridge config
 ```etc/network/interfaces
 auto eno1
 iface eno1 inet manual

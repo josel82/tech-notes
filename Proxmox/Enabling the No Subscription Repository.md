@@ -1,4 +1,4 @@
-# How to change Update repository to CE
+# Enabling the No Subscription Repository
 #Proxmox 
 
 ## GUI method (recommended)
@@ -36,3 +36,17 @@ deb http://security.debian.org bookworm-security main contrib
 # not for production use
 deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription
 ```
+
+3. Update the lists.
+```bash
+apt-get update
+```
+
+4. Do a distribution upgrade.
+```bash
+apt-get dist-upgrade
+```
+
+5. Reboot your server.
+```
+reboot now
