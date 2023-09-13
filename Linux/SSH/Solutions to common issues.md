@@ -1,13 +1,37 @@
 # Solutions to common issues
 #Linux #Issues #Solutions #SSH
 
+
+
 Problem:
 ```
 no matching host key type found. Their offer: rsa-sha2-512,rsa-sha2-256,ecdsa-sha2-nistp256,ssh-ed25519
 ```
 
-Solution:
-[https://www.analysisman.com/2018/08/linux-ssh.html](https://www.analysisman.com/2018/08/linux-ssh.html)
+
+[Solution:](https://www.analysisman.com/2018/08/linux-ssh.html)
+Open up the terminal. We will be editing the `/etc/ssh/ssh_config` file, but before you do, create a backup of the current version of the file. You might need to use `sudo` to run this commands:
+```bash
+sudo cp /etc/ssh/ssh_config /etc/ssh/ssh_config.bak
+```
+
+Now, open the file with the text editor of your choice, I will use nano:
+```bash
+sudo nano /etc/ssh/ssh_config
+```
+
+Uncomment these two lines (remove the `#` signs):
+```bash
+# MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160  
+# Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+```
+
+Finally add these two lines at the bottom of the file:
+```bash
+HostkeyAlgorithms ssh-dss,ssh-rsa,ssh-ed25519,rsa-sha2-512,rsa-sha2-256  
+KexAlgorithms +diffie-hellman-group1-sha1
+```
+
 
 Problem:
 ```
