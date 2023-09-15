@@ -4,12 +4,20 @@ This repository contains notes on various topics such as Networking, CISCO CCNA,
 
 ## Table of Contents
 
-- Bash 
+- Ansible
+- Bash
+- CISCO 
 - Dante
 - Docker
+- GNS3
+- Home Assistant
+- Kali
 - Linux
+- MacOS
 - Proxmox
 - Python
+- Security
+- Teleport
 
 ## Usage
 
