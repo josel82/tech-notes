@@ -49,4 +49,8 @@ truncate -s 0 /var/log/application.log
 This is an option for recovering a server with its file system full (Analog to the situation explained in the command above). The only downside is that you would lose information that could be useful for determining the cause of the problem.
 
 
+## Hashing utility
 
+```
+echo -n "hello" | md5sum
+```

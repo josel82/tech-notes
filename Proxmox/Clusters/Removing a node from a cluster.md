@@ -8,6 +8,6 @@ pvecm delnode <nodename>
 ```
 3. After removing the node you may still see the node on the GUI. To remove the node from the GUI you need to delete the following directory:
 ```bash
-rm -r /etc/pve/node/<nodename>
+rm -r /etc/pve/nodes/<nodename>
 ```
 4. Reload the GUI and the node should be gone.
