@@ -1,4 +1,36 @@
-#### Static Routes
+
+# Static Routes
+## Syntax
+`ipv6 route`*destination/prefix-length*   {*next-hop*  |  *exit-interface*  \[*next-hop*]}  \[ad] 
+
+## Static route types
+
+- **Directly attached** static route: Only the exit interface is specified.
+`R1(config)ipv6 route 2001:db8:03::/64 g0/0`
+
+- **Recursive** static route: Only the next hop is specified.
+`R1(config)ipv6 route 2001:db8:03::/64 2001:db8:12::2`
+
+- **Fully specified** static route: Both the exit interface and next hop are specified.
+`R1(config)ipv6 route 2001:db8:03::/64 g0/0 2001:db8:12::2`
+
+- **Network route** 
+`R1(config)ipv6 route 2001:db8:03::/64 2001:db8:12::2`
+
+- **Host route**
+`R1(config)ipv6 route 2001:db8:01::100/128 2001:db8:12::2`
+
+- **Default route**
+`R1(config)ipv6 route ::/0 2001:db8:23::1
+
+- **Floating** static route
+`R1(config)ipv6 route 2001:db8:03::/64 2001:db8:12::2 120`
+You create a floating static route by setting the "ad" (administrative distance) to a higher value than the main route. In this example, we imply the existence of a route for network `2001:db8:03::/64` on a different next hop and with a lower "ad". This route will only take effect if the main route, the one with lower "ad", is disabled.
+
+## Important note!
+In IPv6, you can't use directly attached static routes if the interface is an Ethernet interface.
+
+
 
 In the following example we have two routers (R1 & R2) which have loopback interfaces configured as shown in the picture below. In order to be able to ping eachother's loopbacks, each router would need a route for that IP address:
 

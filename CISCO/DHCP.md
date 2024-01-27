@@ -1,4 +1,5 @@
-### DHCP Server Setup
+# DHCP
+## DHCP Server Setup
 
 1.   exclude addresses
 	`router(config)#ip dhcp excluded-addresses [IP address|IP address range]`
@@ -25,6 +26,14 @@
 	`router(dhcp-config)#option 150 ip [TFTP server/CISCO unified communications manager IP address]`
 
 
+## DHCP Reservation
+
+```
+ip dhcp excluded-address 192.168.10.140
+ip dhcp pool CLIENT
+   host 192.168.10.140 255.255.255.0
+   client-identifier 01ac.e076.37d5.ca
+```
 ### Some show commands
 
 - #### On the server

@@ -19,16 +19,13 @@ airmon-ng check kill
 ```
 
 ```bash
-iwconfig wlan0 mode monitor
+airmon-ng start wlan0
 ```
 
-```bash
-ifconfig wlan0 up
-```
 
 ## Check if it works
 ```bash
-ifconfig
+iwconfig
 ```
 
 ```bash
@@ -38,3 +35,20 @@ airodump-ng wlan0
 ```bash
 airplay-ng --test wlan0
 ```
+
+## Scan
+
+```
+airodump-ng wlan0 
+```
+By default it will scan only in 2.4Ghz
+
+```
+airodump-ng wlan0 --manufacturer
+```
+Gives you a bit more information
+
+```
+airodump-ng wlan0 --manufacturer --band abg
+```
+Scan in different bands

@@ -17,7 +17,7 @@ ip arp inspection trust
 exit
 ```
 
-NOTE: DAI relies on DHCP Snooping binding table on the switch. If you encounter problems after enabling DAI and setting up trusted port, check the DHCP Snooping binding table [[DHCP Snooping#^d84648]]; If there are no entries, try to renew the DHCP lease on the client PC.
+NOTE: DAI relies on DHCP Snooping binding table on the switch. If you encounter problems after enabling DAI and setting up trusted port, check the DHCP Snooping binding table [[CISCO/Security/DHCP Snooping#^d84648]]; If there are no entries, try to renew the DHCP lease on the client PC.
 
 ## Show commands
 ```cisco

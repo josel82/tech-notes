@@ -92,6 +92,7 @@ The following is an example where we have an internal area (Area 2) that is not 
 Is it is, R5 interfaces won't be advertised to other areas. This particular case can be fixed by creating virtual interfaces in R2 and R4, creatin a tunnel through Area 1 in order to connect Area 2 to Area 0. 
 
 command: 
+
 | Area we want to travers | command | Neighbour Router ID |
 |---|---|---|
 | `area 1` | `virtual-link` | `5.5.5.5` |

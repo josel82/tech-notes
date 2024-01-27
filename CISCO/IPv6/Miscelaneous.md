@@ -2,15 +2,19 @@
 #### Test IPv6 connectivity
 [Test IPv6 Here](http://test-ipv6.com)
 
-### Hostnames 
+# Hostnames 
 ```cisco
 R1(config)#ipv6 host r2 2001:1:1:2::2
 R1(config)#end
 R1#ping r2
 ```
 
+# IPv6 Neighbor table
+```
+show ipv6 neighbor
+```
 
-### Pings
+# Ping
 Standard ping
 ```cisco
 R1#ping 2001:FACE::1
