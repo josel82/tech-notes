@@ -1,6 +1,6 @@
 # IOS File System (IFS)
 
-#CISCO #IT 
+#CISCO #IOS 
 
 For each physical memory device in the router, IOS creates a simple IOS file system and gives that device a name.
 
