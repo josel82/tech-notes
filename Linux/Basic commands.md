@@ -122,7 +122,7 @@ sudo lshw -html > hwinfo.html
 
 A shorter output version of the same command.
 ```bash
-sudo lhhw -short
+sudo lshw -short
 ```
 
 ### USB devices

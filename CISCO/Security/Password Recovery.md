@@ -1,4 +1,4 @@
- In order to reset the passord you'll need to go into ROMMON mode, this can be achieve by sending a break signal during booting.
+ In order to reset the password you'll need to go into ROMMON mode, this can be achieve by sending a break signal during booting.
 
 #### How to send break signal from a Macbook:
 

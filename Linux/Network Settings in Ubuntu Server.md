@@ -59,6 +59,10 @@ nameserver 8.8.4.4
 ```bash
 ip addr flush eth0
 ```
+## Clear arp cache
+```
+arp -d <ip address>
+```
 
 
 ## Configuring Static IP Address
@@ -136,6 +140,16 @@ Save and close the file.
 3. Apply the configuration:
 ```bash
 sudo netplan apply
+```
+
+## Set a static mac address int the `interfaces` file
+
+```
+auto eth0
+iface eth0 inet dhcp
+	hwaddress ether 9A:E9:AF:C4:42:A2
+	hostname PC2
+	
 ```
 
 ## How to disable IPv6

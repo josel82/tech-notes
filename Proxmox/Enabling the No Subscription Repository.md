@@ -10,7 +10,7 @@
 ## Manual method
 1. We can disable the Enterprise repository by editing the following file:
 ```bash
-mano /etc/apt/sources.list.d/pve-enterprise.list
+nano /etc/apt/sources.list.d/pve-enterprise.list
 ```
 
 We just need to comment out this line.
