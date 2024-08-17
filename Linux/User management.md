@@ -21,7 +21,7 @@ sudo usermod -l newUser username
 ```
 ##  Change user's password
 ```bash
-sudo usermod -p newPassword usename
+sudo usermod -p newPassword username
 ```
 **Security note:** you may want to add a space at the beginning of this command so it does't appear in the shell history.
 

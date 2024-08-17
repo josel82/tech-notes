@@ -1,9 +1,9 @@
 # Getting Started
 #Git 
 
-## Ininital configuration
+## Initial configuration
 
-1. From the home directory we start by seting the username:
+1. From the home directory we start by setting the username:
 ```bash
 git config --global user.name "Your name"
 ```
@@ -13,7 +13,7 @@ git config --global user.name "Your name"
 git config --global user.email your@email.com
 ```
 
-3. Then we initialize the default branch:
+3. Then we initialise the default branch:
 ```bash
 git config --global init.default branch main
 ```

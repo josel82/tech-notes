@@ -21,7 +21,7 @@ echo Hello World
 
 ```
 
-and I try to run it, I would optain:
+and I try to run it, I would obtain:
 ```bash
 hello
 ```
