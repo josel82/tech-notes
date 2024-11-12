@@ -1,0 +1,5 @@
+```
+{
+    "BASEPATH": "../hass-config"
+}
+```

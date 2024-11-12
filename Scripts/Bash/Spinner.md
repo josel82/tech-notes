@@ -107,7 +107,7 @@ copy
 ```bash
 
 copy(){
-    echo "Copying files"
+    echo -n "Copying files"
 	spin &
 	pid=$!
 
