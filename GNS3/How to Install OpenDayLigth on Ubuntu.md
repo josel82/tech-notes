@@ -1,4 +1,4 @@
-# How to Install Open Day Ligth on Ubuntu Docker Container
+# How to Install Open Day Ligth on Ubuntu 
 
 ## Update packet libraries
 ```bash
@@ -16,15 +16,11 @@ Note: ODL version we intend to install requires JRE version 17 or higher
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 ```
 
-## Install wget
+## Install wget and unzip
 ```bash
 apt-get install wget unzip -y
 ```
 
-## Install unzip
-```bash
-apt-get install unzip
-```
 
 ## Download OpenDayLight
 [Download Page](https://docs.opendaylight.org/en/latest/downloads.html#)
@@ -35,6 +31,10 @@ wget https://nexus.opendaylight.org/content/repositories/public/org/opendaylight
 ## Unzip the downloaded file
 ```bash
 unzip distribution-karaf-0.5.2-Boron-SR2.zip
+```
+
+```
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 ```
 
 ## Start ODL

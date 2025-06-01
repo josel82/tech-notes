@@ -17,6 +17,9 @@ sudo launchctl start com.apple.tftpd
 You can confirm that the server is running with the following command:
 ```
 netstat -atp UDP | grep tftp
+```
+Output:
+```
  udp4     0    0  *.tftp                *.*
  udp6     0    0  *.tftp                *.*
 ```
