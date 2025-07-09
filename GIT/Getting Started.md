@@ -27,7 +27,7 @@ or
 git help config
 ```
 
-# Create a repository
+## Create a repository
 1. Go to the directory you want to create the repository into:
 ```bash
 cd /Documents/Repos/myRepo1
@@ -37,3 +37,19 @@ cd /Documents/Repos/myRepo1
 ```bash
 git init 
 ```
+
+## Add changes to repository
+
+```bash
+git add file_path
+```
+add all changes
+```bash
+git add .
+```
+
+## Commit changes
+```bash
+git commit -m "Type a message describing the commited changes"
+```
+

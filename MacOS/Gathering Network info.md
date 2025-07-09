@@ -48,7 +48,10 @@ Lists DNS IP addresses configured for a specific network service
 networksetup -getdnsservers <network service>
 ```
 
-
+## Get Local IP address
+```bash
+ipconfig getifaddr en0
+```
 ## netstat
 
 The following command lists the hosts routing table:
