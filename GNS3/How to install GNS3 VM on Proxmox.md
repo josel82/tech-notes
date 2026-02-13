@@ -13,6 +13,10 @@ Available on https://gns3.com/software/download-vm
 wget https://github.com/GNS3/gns3-gui/releases/download/v2.2.42/GNS3.VM.VMware.ESXI.2.2.42.zip
 ```
 
+3. Unzip the file:
+```
+unzip GNS3.VM.VMware.ESXI.2.2.42.zip
+```
 ## Extract the contents of the .ova file
 ```bash
 tar -xvf *.ova
