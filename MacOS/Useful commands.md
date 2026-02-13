@@ -1,12 +1,26 @@
 # Useful commands
 
-## Show routes
+### Show routes
 ```bash
 netstat -rn
 ```
 
-You can get specific routes as follows:
+### Show specific routes
 ```bash
 route get <destination IP>
 ```
 
+### Flushing the routing table
+```
+sudo route -n flush
+```
+
+### Show DNS resolvers
+```
+scutil --dns
+```
+
+### Flush DNS cache
+```
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```
