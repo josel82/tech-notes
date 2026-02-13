@@ -39,3 +39,11 @@ USER jose
 
 CMD ["node", "index.js"]
 ```
+
+
+
+| Variable  | Description | Default |
+| DJANGO_DEBUG | Enables Django debug mode | False |
+| PORT | Port Django listens on	| 8000 |
+| LUAS_STOP | Default stop ID (e.g. win, ran) | win |
+
