@@ -43,6 +43,12 @@ or
 route -n
 ```
 
+Add a route
+```bash
+sudo ip route add 239.1.1.10 dev ens19 metric 10
+```
+
+
 ## Get DNS servers information
 ```bash
 systemd-resolve --status
