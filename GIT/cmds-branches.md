@@ -95,3 +95,14 @@ git switch main
 ```bash
 git merge feature/uploader
 ```
+
+## Comparing Branches
+Compare two local branches. This will show you commits that are present in `feature/uploader` but not in `main`
+```bash
+git log main..feature/uploader
+```
+
+Compare a  remote branch with a local branch. This will show you commits that are present in `main` but not in `origin/main`
+```bash
+git log origin/main..main
+```
