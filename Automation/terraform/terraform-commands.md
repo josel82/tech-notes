@@ -52,6 +52,25 @@ terraform show
 terraform plan -var instance_type=t2.large
 ```
 
+
+## Destroy all deployed assets
+```bash
+terraform destroy
+```
+
+## Destroy specific hosts
+```bash
+terraform plan -destroy \\
+  -target='proxmox_vm_qemu.masters[0]' \\
+  -target='proxmox_vm_qemu.masters[1]' 
+```
+
+```bash
+terraform % terraform destroy \\
+  -target='proxmox_vm_qemu.masters[0]' \\
+  -target='proxmox_vm_qemu.masters[1]'
+```
+
 ## Review output values
 ```bash
 terraform output

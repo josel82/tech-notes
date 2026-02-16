@@ -7,7 +7,7 @@ git branch
 ```
 
 ## Create a new branch
-This command will create anew branch based on the currently checked out revision
+This command will create a new branch based on the currently checked out revision
 ```bash
 git branch my-new-branch
 ```
